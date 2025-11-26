@@ -39,7 +39,9 @@ function reducer(state, action) {
       );
     }
     case "DELETE": {
-      return state.filter((item) => item.id !== action.targetId);
+      return state.filter(
+        (item) => String(item.id) !== String(action.targetId),
+      );
     }
     default:
       return state;
